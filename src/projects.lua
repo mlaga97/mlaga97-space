@@ -11,6 +11,16 @@ cover = {
 			["class"] = "cover-heading",
 			[">"] = "Well, I suppose this site is a project..."
 		},
+		{
+			["<"] = "p",
+			["class"] = "lead",
+			[">"] = {
+				["<"] = "a",
+				["class"] = "btn btn-lg btn-default",
+				["href"] = "https://github.com/mlaga97/mlaga97-space",
+				[">"] = "View on GitHub"
+			}
+		}
 	}
 }
 
