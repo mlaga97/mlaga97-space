@@ -1,4 +1,4 @@
-all: build/index.html build/projects.html build/social.html build/assets/css/*.css build/assets/bootstrap/* build/assets/image/*
+all: build/index.html build/projects.html build/social.html build/assets/*
 
 deploy: all
 	mkdir -p /var/www/html/
@@ -7,6 +7,14 @@ deploy: all
 deploy-test: all
 	mkdir -p /var/www/html/testing/
 	cp -r build/* /var/www/html/testing/
+
+pull-deploy:
+	git pull
+	make deploy
+
+pull-deploy-test:
+	git pull
+	make deploy-test
 
 build/index.html: src/index.lua src/site.lua src/navbar.lua src/header.lua framework/parseTagTree.lua
 	mkdir -p build/
@@ -20,17 +28,8 @@ build/social.html: src/social.lua src/site.lua src/navbar.lua src/header.lua fra
 	mkdir -p build/
 	cd src; lua -e 'parseTagTree = dofile "../framework/parseTagTree.lua"' social.lua > ../build/social.html
 
-build/assets/css/*.css: assets/css/*.css
-	mkdir -p build/assets/css/
-	cp assets/css/*.css build/assets/css/
-
-build/assets/bootstrap/*: assets/bootstrap/*
-	mkdir -p build/assets/bootstrap/
-	cp assets/bootstrap/*.css build/assets/bootstrap/
-
-build/assets/image/*: assets/image/*
-	mkdir -p build/assets/image/
-	cp -r assets/image/* build/assets/image/
+build/assets/*: assets/*
+	rsync -rupE --delete assets build/assets
 
 clean:
 	rm -r build
