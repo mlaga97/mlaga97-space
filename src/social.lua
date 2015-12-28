@@ -20,12 +20,12 @@ cover = {
 	["<"] = "div",
 	["class"] = "cover inner",
 	[">"] = {
-		social("https://facebook.com/luc.lagarde.1", "./assets/social/facebook-2-128.png"),
-		social("https://twitter.com/mlaga97", "./assets/social/twitter-2-128.png"),
-		social("https://google.com/+LucLagarde97", "./assets/social/google-plus-2-128.png"),
-		social("https://github.com/mlaga97/", "./assets/social/github-7-128.png"),
-		social("https://linkedin.com/in/mlaga97", "./assets/social/linkedin-2-128.png"),
-		social("https://youtube.com/c/LucLagarde97", "./assets/social/youtube-2-128.png"),
+		social("https://facebook.com/luc.lagarde.1", "./assets/image/social/facebook-2-128.png"),
+		social("https://twitter.com/mlaga97", "./assets/image/social/twitter-2-128.png"),
+		social("https://google.com/+LucLagarde97", "./assets/image/social/google-plus-2-128.png"),
+		social("https://github.com/mlaga97/", "./assets/image/social/github-7-128.png"),
+		social("https://linkedin.com/in/mlaga97", "./assets/image/social/linkedin-2-128.png"),
+		social("https://youtube.com/c/LucLagarde97", "./assets/image/social/youtube-2-128.png"),
 		
 		--"./assets/social/flickr-2-128.png"
 		--"./assets/social/stackoverflow-2-128.png"
@@ -60,7 +60,7 @@ body = {
 }
 
 header = createHeader(
-	{ ["stylesheet"] = "./social.css" },
+	{ ["stylesheet"] = "./assets/css/social.css" },
 	{ ["description"] = "Social media links" },
 	{ ["title"] = "Social" }
 )

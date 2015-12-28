@@ -104,18 +104,18 @@ local function createHeader(...)
 				"<!-- Bootstrap core CSS -->",
 				{
 					["<"] = "link",
-					["href"] = "./bootstrap/bootstrap.min.css",
+					["href"] = "./assets/bootstrap/bootstrap.min.css",
 					["rel"] = "stylesheet"
 				},
 				"<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->",
 				{
 					["<"] = "link",
-					["href"] = "./bootstrap/ie10-viewport-bug-workaround.css",
+					["href"] = "./assets/bootstrap/ie10-viewport-bug-workaround.css",
 					["rel"] = "stylesheet"
 				},
 				{
 					["<"] = "link",
-					["href"] = "./base.css",
+					["href"] = "./assets/css/base.css",
 					["rel"] = "stylesheet"
 				},
 			},

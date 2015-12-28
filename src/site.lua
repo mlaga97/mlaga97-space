@@ -22,7 +22,7 @@ site.span = {
 site.scripts = {
 		{
 			["<"] = "script",
-			["src"] = "./bootstrap/jquery.min.js",
+			["src"] = "./assets/bootstrap/jquery.min.js",
 			[">"] = {}
 		},
 		{
@@ -31,12 +31,12 @@ site.scripts = {
 		},
 		{
 			["<"] = "script",
-			["src"] = "./bootstrap/bootstrap.min.js",
+			["src"] = "./assets/bootstrap/bootstrap.min.js",
 			[">"] = {}
 		},
 		{
 			["<"] = "script",
-			["src"] = "./bootstrap/ie10-viewport-bug-workaround.js",
+			["src"] = "./assets/bootstrap/ie10-viewport-bug-workaround.js",
 			[">"] = {}
 		}
 }

@@ -38,7 +38,7 @@ body = {
 }
 
 header = createHeader(
-	{ ["stylesheet"] = "./projects.css" },
+	{ ["stylesheet"] = "./assets/css/projects.css" },
 	{ ["description"] = "Project home" },
 	{ ["title"] = "Projects" }
 )

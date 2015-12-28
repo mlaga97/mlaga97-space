@@ -82,7 +82,7 @@ body = {
 }
 
 header = createHeader(
-	{ ["stylesheet"] = "./index.css" },
+	{ ["stylesheet"] = "./assets/css/index.css" },
 	{ ["description"] = "Homepage" },
 	{ ["title"] = "Home" }
 )
