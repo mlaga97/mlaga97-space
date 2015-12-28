@@ -29,7 +29,7 @@ build/social.html: src/social.lua src/site.lua src/navbar.lua src/header.lua fra
 	cd src; lua -e 'parseTagTree = dofile "../framework/parseTagTree.lua"' social.lua > ../build/social.html
 
 build/assets/*: assets/*
-	rsync -rupE --delete assets build/assets
+	rsync -rupE --delete assets build/
 
 clean:
 	rm -r build
