@@ -14,7 +14,7 @@ projects = {
 	]],
 	[[
 		<h3>This Website</h3>
-		<p>My attempt to write html without actually editing any html files. <a href="https://github.com/mlaga97/mlaga97-space">GitHub</a></p>
+		<p>This is what happens when I try to write html without actually editing html files. <a href="https://github.com/mlaga97/mlaga97-space">GitHub</a></p>
 	]],
 	[[
 		<h3>Also, I bought a domain and an EC2 account</h3>
