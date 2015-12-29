@@ -2,47 +2,73 @@ site = require("site")
 createNavbar = require("navbar")
 createHeader = require("header")
 
-cover = {
+projects = {
+	[[
+		<h3>This website is a project, right?</h3>
+		<p><b>Problem:</b> So, I get this fancy new domain name, but I don't have any content for it.</p>
+		<p><b>Solution:</b> I'm writing this site using a html preprocessor/generator that I am developing in Lua, which can be found over at my <a href="https://github.com/mlaga97/mlaga97-site">GitHub</a>. Pretty soon I'll try to document some of it here on the site itself.</p>
+	]],
+}
+
+function project_list(input)	
+	output = {
+		["<"] = "div",
+		["class"] = "row marketing",
+		[">"] = {
+			{
+				["<"] = "div",
+				["class"] = "col-lg-6",
+				[">"] = {
+				}
+			},
+			{
+				["<"] = "div",
+				["class"] = "col-lg-6",
+				[">"] = {
+				}
+			},
+		}
+	}
+	
+	for x,y in ipairs(input) do
+		if (x - math.floor(x/2)*2) == 1 then
+			table.insert(output[">"][1][">"], y)
+		else
+			table.insert(output[">"][2][">"], y)
+		end
+	end
+	
+	return output
+end
+
+body = {
 	["<"] = "div",
-	["class"] = "cover inner",
+	["class"] = "container",
 	[">"] = {
 		{
-			["<"] = "h1",
-			["class"] = "cover-heading",
-			[">"] = "Well, I suppose this site is a project..."
+			["<"] = "div",
+			["class"] = "jumbotron",
+			[">"] = [[
+				<h1>Featured Projects</h1>
+				<p class="lead">Descriptions and links to a few of the projects that I am currently working on.</p>
+			]]
 		},
+		project_list(projects),
 		{
-			["<"] = "p",
-			["class"] = "lead",
-			[">"] = {
-				["<"] = "a",
-				["class"] = "btn btn-lg btn-default",
-				["href"] = "https://github.com/mlaga97/mlaga97-space",
-				[">"] = "View on GitHub"
-			}
+			["<"] = "div",
+			["class"] = "footer",
+			[">"] = [[
+				<p>Built with <a href="http://getbootstrap.com/">Bootstrap</a></p>
+			]]
 		}
 	}
 }
 
-body = {
+site_wrapper = {
 	["<"] = "body",
 	[">"] = {
-		{
-			["<"] = "div",
-			["class"] = "site-wrapper",
-			[">"] = {
-				["<"] = "div",
-				["class"] = "site-wrapper-inner",
-				[">"] = {
-					["<"] = "div",
-					["class"] = "cover-container",
-					[">"] = {
-						createNavbar("Projects"),
-						cover
-					}
-				}
-			}
-		},
+		createNavbar("Projects"),
+		body,
 		unpack(site.scripts)
 	}
 }
@@ -55,5 +81,5 @@ header = createHeader(
 
 parseTagTree({
 	["<"] = "html",
-	[">"] = { header, body, site.span }
+	[">"] = { header, site_wrapper, site.span }
 });
