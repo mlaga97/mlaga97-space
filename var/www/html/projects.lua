@@ -1,3 +1,5 @@
+parseTagTree = require("parseTagTree")
+
 site = require("site")
 createNavbar = require("navbar")
 createHeader = require("header")
@@ -122,7 +124,13 @@ header = createHeader(
 	{ ["title"] = "Projects" }
 )
 
-parseTagTree({
-	["<"] = "html",
-	[">"] = { header, site_wrapper, site.span }
-});
+function handle(r)
+    r.content_type = "text/html" -- set the output to text/html
+	
+	parseTagTree({
+		["<"] = "html",
+		[">"] = { header, site_wrapper, site.span }
+	}, "", "\t", function(s) r:puts(s) end);
+    
+    return apache2.OK
+end
