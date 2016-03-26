@@ -1,7 +1,7 @@
 local pages = {
-	{ name = "Home", href = "./index.html" },
-	{ name = "Projects", href = "./projects.html" },
-	{ name = "Social", href = "./social.html" },
+	{ name = "Home", href = "./index.lua" },
+	{ name = "Projects", href = "./projects.lua" },
+	{ name = "Social", href = "./social.lua" },
 }
 
 local function createNavbar(selection)
